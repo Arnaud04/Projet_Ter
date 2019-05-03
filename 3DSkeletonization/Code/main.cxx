@@ -65,7 +65,7 @@ int main ( int argc, char *argv[] )
       std::vector<vtkIdType> neighbouringVertices;
       for (unsigned int i = 0;i < adjacentCells->GetNumberOfIds();++i)
       {
-	vtkSmartPointer<vtkIdList> vertices = vtkSmartPointer<vtkIdList>::New();
+		vtkSmartPointer<vtkIdList> vertices = vtkSmartPointer<vtkIdList>::New();
 	mesh->GetCellPoints(adjacentCells->GetId(i), vertices);
         for (unsigned int k = 0;k < vertices->GetNumberOfIds();++k)
 	{
@@ -73,7 +73,17 @@ int main ( int argc, char *argv[] )
 	    neighbouringVertices.push_back(vertices->GetId(k));
 	}
       }
+     std::sort(neighbouringVertices.begin(), neighbouringVertices.end(), std::greater<int>());
+     auto last  = std::unique(neighbouringVertices.begin(), neighbouringVertices.end());
+     neighbouringVertices.erase(last, neighbouringVertices.end());
+     std::cout << "Les sommets voisins du " << pointCounter << " sont ";
+     for (unsigned int i = 0;i < neighbouringVertices.size();++i)
+     {
+		std::cout << " " << neighbouringVertices[i];
+     }
+     std::cout << std::endl;
     }
+
   }
 
   /**
