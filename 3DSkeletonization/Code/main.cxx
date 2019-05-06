@@ -17,6 +17,7 @@
 #include <vtkUnstructuredGrid.h>
 #include <sstream>
 #include <map>
+#include <vector>
 
 //#define DEBUG
 
@@ -24,6 +25,8 @@ void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename);
 
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename);
+
+void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh,vtkSmartPointer<vtkPoints> &dualMeshPoints, vtkSmartPointer<vtkIdList> idListPoints );
 
 int main ( int argc, char *argv[] )
 {
@@ -45,43 +48,46 @@ int main ( int argc, char *argv[] )
   std::string inputFilename = argv[1];
   vtkSmartPointer<vtkUnstructuredGrid> mesh = ReadMeshFromVTK(inputFilename);
   
-  
   mesh->BuildLinks();
   mesh->ComputeBounds();
 
   vtkSmartPointer<vtkPoints> points = mesh->GetPoints();
   
   unsigned int numberOfPoints = points->GetNumberOfPoints();
+  
   for (unsigned int pointCounter = 0; pointCounter < numberOfPoints;
        ++pointCounter)
   {
-    double* point = points->GetPoint(pointCounter);
-    std::cout << pointCounter << std::endl;
-    vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
-    mesh->GetPointCells(pointCounter, adjacentCells);
-    if (adjacentCells->GetNumberOfIds() > 1)
-    {
-      // This loop extracts the neighbourhood of the current point. 
-      std::vector<vtkIdType> neighbouringVertices;
-      for (unsigned int i = 0;i < adjacentCells->GetNumberOfIds();++i)
-      {
-		vtkSmartPointer<vtkIdList> vertices = vtkSmartPointer<vtkIdList>::New();
-	mesh->GetCellPoints(adjacentCells->GetId(i), vertices);
-        for (unsigned int k = 0;k < vertices->GetNumberOfIds();++k)
-	{
-	  if (vertices->GetId(k) != pointCounter)
-	    neighbouringVertices.push_back(vertices->GetId(k));
-	}
-      }
-     std::sort(neighbouringVertices.begin(), neighbouringVertices.end(), std::greater<int>());
-     auto last  = std::unique(neighbouringVertices.begin(), neighbouringVertices.end());
-     neighbouringVertices.erase(last, neighbouringVertices.end());
-     std::cout << "Les sommets voisins du " << pointCounter << " sont ";
-     for (unsigned int i = 0;i < neighbouringVertices.size();++i)
-     {
-		std::cout << " " << neighbouringVertices[i];
-     }
-     std::cout << std::endl;
+		double* point = points->GetPoint(pointCounter);
+		//std::cout << pointCounter << std::endl;
+		vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
+		mesh->GetPointCells(pointCounter, adjacentCells);
+		
+		if (adjacentCells->GetNumberOfIds() > 1)
+		{
+		  // This loop extracts the neighbourhood of the current point. 
+		  std::vector<vtkIdType> neighbouringVertices;
+		  for (unsigned int i = 0; i < adjacentCells->GetNumberOfIds(); ++i)
+		  {
+			vtkSmartPointer<vtkIdList> vertices = vtkSmartPointer<vtkIdList>::New();
+			mesh->GetCellPoints(adjacentCells->GetId(i), vertices);
+			
+			for (unsigned int k = 0; k < vertices->GetNumberOfIds(); ++k)
+			{
+			  if (vertices->GetId(k) != pointCounter)
+				neighbouringVertices.push_back(vertices->GetId(k));
+			}
+		  }
+		  
+		 std::sort(neighbouringVertices.begin(), neighbouringVertices.end(), std::greater<int>());
+		 auto last  = std::unique(neighbouringVertices.begin(), neighbouringVertices.end());
+		 neighbouringVertices.erase(last, neighbouringVertices.end());
+		 //std::cout << "Les sommets voisins du " << pointCounter << " sont ";
+		 for (unsigned int i = 0;i < neighbouringVertices.size();++i)
+		 {
+			//std::cout << " " << neighbouringVertices[i];
+		 }
+		 //std::cout << std::endl;
     }
 
   }
@@ -116,45 +122,81 @@ int main ( int argc, char *argv[] )
   vtkSmartPointer<vtkCellArray> primalCells = mesh->GetCells();
   vtkSmartPointer<vtkIdList> idListPoints = vtkSmartPointer<vtkIdList>::New();
   vtkIdType cellCounter = 0;
+  
   for (cellCounter = 0, primalCells->InitTraversal();
        primalCells->GetNextCell(idListPoints) ;
        ++cellCounter)
   {
-    std::cout << "Les ids des points de la cellule " << cellCounter << " sont ";
-    for (unsigned int i = 0;i < idListPoints->GetNumberOfIds();++i)
-    {
-      std::cout << " " << idListPoints->GetId(i);
-    }
-    std::cout << std::endl;
-    /* 
-       Adding data to the primal and dual meshes. We have to store the coordinates 
-       and the index of the barycenter in each cell of the primal mesh. 
-    */
-    
-    double* cellCounterData = new double(cellCounter);
-   
-    vtkIdType position = mesh->GetCellData()->GetScalars()
-      ->InsertNextTuple(cellCounterData);
-    delete cellCounterData;
+		//std::cout << "Les ids des points de la cellule " << cellCounter << " sont ";
+		std::vector<vtkIdType> CellPointsId;
+		
+		
+		//======= find barycenter ========
+		findDualPoints(mesh,dualMeshPoints,idListPoints);
+			
 
-    double* cellData = new double[5];
-    cellData[0] = 1;
-    cellData[1] = 1;
-    cellData[2] = -1.0;
-    cellData[3] = -1.0;
-    cellData[4] = 0.0;
-    vtkIdType idNewCellData = arrayData->InsertNextTuple(cellData);
-    delete[] cellData;    
+		//dualMeshCells->InsertNextCell(... 
+		
+		/* 
+		   Adding data to the primal and dual meshes. We have to store the coordinates 
+		   and the index of the barycenter in each cell of the primal mesh. 
+		*/
+		
+		double* cellCounterData = new double(cellCounter);
+	   
+		vtkIdType position = mesh->GetCellData()->GetScalars()
+		  ->InsertNextTuple(cellCounterData);
+		delete cellCounterData;
+
+		double* cellData = new double[5];
+		cellData[0] = 1;
+		cellData[1] = 1;
+		cellData[2] = -1.0;
+		cellData[3] = -1.0;
+		cellData[4] = 0.0;
+		vtkIdType idNewCellData = arrayData->InsertNextTuple(cellData);
+		delete[] cellData;    
   }
+  
+  //TEST
+  //std::cout << " " << idListPoints->GetId(1);
+  //FIN DE TEST
   
   //Write the dual dual PolyData.
   std::stringstream ssDualDual;
   ssDualDual << "ProcessedMesh"; 
   WriteMeshToVTK(mesh, ssDualDual.str().c_str());
- 
+
   return EXIT_SUCCESS;
 }
 
+void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &dualMeshPoints, vtkSmartPointer<vtkIdList> idListPoints )
+{
+	 	double p[3];
+		double x=0;
+		double y=0;
+		double z=0;
+		
+		for (unsigned int i = 0; i < idListPoints->GetNumberOfIds(); ++i)
+		{
+			//std::cout << " " << idListPoints->GetId(i);
+			vtkIdType v = idListPoints->GetId(i);
+			mesh->GetPoint(v,p);
+			x += p[0];
+			y += p[1];
+			z += p[2];
+		}
+		x /= (double)idListPoints->GetNumberOfIds();
+		y /= (double)idListPoints->GetNumberOfIds();
+		z /= (double)idListPoints->GetNumberOfIds();
+				
+		std::cout << " x = "  << x;
+		std::cout << " y = "  << y;
+		std::cout << " z = "  << z;
+		std::cout << std::endl;
+	
+		dualMeshPoints->InsertNextPoint(x,y,z);
+}
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename)

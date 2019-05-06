@@ -45,6 +45,8 @@ sstream
 -
 map
 -
+vector
+-
 
 /home/arnaud/projects/VTK-build/Common/Core/vtkAtomic.h
 vtkCommonCoreModule.h
