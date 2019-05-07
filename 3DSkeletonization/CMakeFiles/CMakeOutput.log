@@ -1,4 +1,4 @@
-The system is: Linux - 4.15.0-48-generic - x86_64
+The system is: Linux - 4.15.0-47-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,80 +23,80 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8fd7b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8fd7b.dir/build.make CMakeFiles/cmTC_8fd7b.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_8fd7b.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_8fd7b.dir/testCCompiler.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_8fd7b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fd7b.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8fd7b.dir/testCCompiler.c.o  -o cmTC_8fd7b 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_70c73/fast"
+/usr/bin/make -f CMakeFiles/cmTC_70c73.dir/build.make CMakeFiles/cmTC_70c73.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_70c73.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_70c73.dir/testCCompiler.c.o   -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_70c73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70c73.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_70c73.dir/testCCompiler.c.o  -o cmTC_70c73 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a6bfa/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a6bfa.dir/build.make CMakeFiles/cmTC_a6bfa.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_a6bfa
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6bfa.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o  -o cmTC_a6bfa 
+Run Build Command:"/usr/bin/make" "cmTC_ec452/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ec452.dir/build.make CMakeFiles/cmTC_ec452.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ec452
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec452.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o  -o cmTC_ec452 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none
 OFFLOAD_TARGET_DEFAULT=1
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a6bfa' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cccwiUbx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_a6bfa /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a6bfa' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec452' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSC7Kur.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec452 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec452' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_a6bfa/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_a6bfa.dir/build.make CMakeFiles/cmTC_a6bfa.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »]
-  ignore line: [Building C object CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_a6bfa]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6bfa.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o  -o cmTC_a6bfa ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ec452/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ec452.dir/build.make CMakeFiles/cmTC_ec452.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ec452]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec452.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o  -o cmTC_ec452 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
+  ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a6bfa' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cccwiUbx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_a6bfa /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec452' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSC7Kur.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec452 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cccwiUbx.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccSC7Kur.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a6bfa] ==> ignore
+    arg [cmTC_ec452] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_a6bfa.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_ec452.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -158,17 +158,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ddcc0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ddcc0.dir/build.make CMakeFiles/cmTC_ddcc0.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_ddcc0.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ddcc0.dir/feature_tests.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.c
-Linking C executable cmTC_ddcc0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddcc0.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ddcc0.dir/feature_tests.c.o  -o cmTC_ddcc0 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_6e66c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6e66c.dir/build.make CMakeFiles/cmTC_6e66c.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_6e66c.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_6e66c.dir/feature_tests.c.o   -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6e66c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e66c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6e66c.dir/feature_tests.c.o  -o cmTC_6e66c 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -178,17 +178,17 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5d4f1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5d4f1.dir/build.make CMakeFiles/cmTC_5d4f1.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_5d4f1.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_5d4f1.dir/feature_tests.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5d4f1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d4f1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5d4f1.dir/feature_tests.c.o  -o cmTC_5d4f1 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_b9c70/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9c70.dir/build.make CMakeFiles/cmTC_b9c70.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_b9c70.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_b9c70.dir/feature_tests.c.o   -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b9c70
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9c70.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b9c70.dir/feature_tests.c.o  -o cmTC_b9c70 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -198,17 +198,17 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1fa17/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1fa17.dir/build.make CMakeFiles/cmTC_1fa17.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_1fa17.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_1fa17.dir/feature_tests.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1fa17
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fa17.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1fa17.dir/feature_tests.c.o  -o cmTC_1fa17 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_b0e2a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b0e2a.dir/build.make CMakeFiles/cmTC_b0e2a.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_b0e2a.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b0e2a.dir/feature_tests.c.o   -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b0e2a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0e2a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b0e2a.dir/feature_tests.c.o  -o cmTC_b0e2a 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -216,77 +216,77 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_44434/fast"
-/usr/bin/make -f CMakeFiles/cmTC_44434.dir/build.make CMakeFiles/cmTC_44434.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_44434.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_44434.dir/testCXXCompiler.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_44434
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44434.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_44434.dir/testCXXCompiler.cxx.o  -o cmTC_44434 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_cb4b3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cb4b3.dir/build.make CMakeFiles/cmTC_cb4b3.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_cb4b3.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_cb4b3.dir/testCXXCompiler.cxx.o -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_cb4b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb4b3.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_cb4b3.dir/testCXXCompiler.cxx.o  -o cmTC_cb4b3 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1a803/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1a803.dir/build.make CMakeFiles/cmTC_1a803.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_1a803
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a803.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1a803 
+Run Build Command:"/usr/bin/make" "cmTC_95341/fast"
+/usr/bin/make -f CMakeFiles/cmTC_95341.dir/build.make CMakeFiles/cmTC_95341.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_95341
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95341.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_95341 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none
 OFFLOAD_TARGET_DEFAULT=1
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a803' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmnGMI9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a803 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a803' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95341' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI9uNrF.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_95341 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95341' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_1a803/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_1a803.dir/build.make CMakeFiles/cmTC_1a803.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »]
-  ignore line: [Building CXX object CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_1a803]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a803.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_1a803 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_95341/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_95341.dir/build.make CMakeFiles/cmTC_95341.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »]
+  ignore line: [Building CXX object CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_95341]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95341.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_95341 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
+  ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1a803' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmnGMI9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1a803 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95341' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI9uNrF.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_95341 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccmnGMI9.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccI9uNrF.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_1a803] ==> ignore
+    arg [cmTC_95341] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -318,7 +318,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_1a803.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_95341.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -344,17 +344,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2620b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2620b.dir/build.make CMakeFiles/cmTC_2620b.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_2620b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_2620b.dir/feature_tests.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_2620b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2620b.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_2620b.dir/feature_tests.cxx.o  -o cmTC_2620b 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_b55f2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b55f2.dir/build.make CMakeFiles/cmTC_b55f2.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_b55f2.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_b55f2.dir/feature_tests.cxx.o -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b55f2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b55f2.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b55f2.dir/feature_tests.cxx.o  -o cmTC_b55f2 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -417,17 +417,17 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_78467/fast"
-/usr/bin/make -f CMakeFiles/cmTC_78467.dir/build.make CMakeFiles/cmTC_78467.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_78467.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_78467.dir/feature_tests.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_78467
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78467.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_78467.dir/feature_tests.cxx.o  -o cmTC_78467 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_783ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_783ad.dir/build.make CMakeFiles/cmTC_783ad.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_783ad.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_783ad.dir/feature_tests.cxx.o -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_783ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_783ad.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_783ad.dir/feature_tests.cxx.o  -o cmTC_783ad 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -490,17 +490,17 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7fa4e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7fa4e.dir/build.make CMakeFiles/cmTC_7fa4e.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_7fa4e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_7fa4e.dir/feature_tests.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_7fa4e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fa4e.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7fa4e.dir/feature_tests.cxx.o  -o cmTC_7fa4e 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_b07b9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b07b9.dir/build.make CMakeFiles/cmTC_b07b9.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_b07b9.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_b07b9.dir/feature_tests.cxx.o -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b07b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b07b9.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b07b9.dir/feature_tests.cxx.o  -o cmTC_b07b9 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -563,17 +563,17 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4fb21/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4fb21.dir/build.make CMakeFiles/cmTC_4fb21.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_4fb21.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_4fb21.dir/feature_tests.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4fb21
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4fb21.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_4fb21.dir/feature_tests.cxx.o  -o cmTC_4fb21 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_a564a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a564a.dir/build.make CMakeFiles/cmTC_a564a.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_a564a.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_a564a.dir/feature_tests.cxx.o -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a564a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a564a.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a564a.dir/feature_tests.cxx.o  -o cmTC_a564a 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -634,411 +634,114 @@ make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSke
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a9c9c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a9c9c.dir/build.make CMakeFiles/cmTC_a9c9c.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a9c9c.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a9c9c.dir/CheckIncludeFile.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_a9c9c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9c9c.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_a9c9c.dir/CheckIncludeFile.c.o  -o cmTC_a9c9c 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_dcd3e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dcd3e.dir/build.make CMakeFiles/cmTC_dcd3e.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_dcd3e.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dcd3e.dir/CheckIncludeFile.c.o   -c /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dcd3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcd3e.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_dcd3e.dir/CheckIncludeFile.c.o  -o cmTC_dcd3e 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_067b0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_067b0.dir/build.make CMakeFiles/cmTC_067b0.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_067b0.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_067b0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_067b0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_067b0.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_067b0.dir/CheckFunctionExists.c.o  -o cmTC_067b0 -lpthread 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_e816a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e816a.dir/build.make CMakeFiles/cmTC_e816a.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_e816a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e816a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e816a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e816a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e816a.dir/CheckFunctionExists.c.o  -o cmTC_e816a -lpthread 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dac27/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dac27.dir/build.make CMakeFiles/cmTC_dac27.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_dac27.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_dac27.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_dac27
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac27.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_dac27.dir/CheckFunctionExists.c.o  -o cmTC_dac27 /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_d9dcc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d9dcc.dir/build.make CMakeFiles/cmTC_d9dcc.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_d9dcc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_d9dcc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d9dcc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9dcc.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_d9dcc.dir/CheckFunctionExists.c.o  -o cmTC_d9dcc /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_024a5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_024a5.dir/build.make CMakeFiles/cmTC_024a5.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_024a5.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_024a5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_024a5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_024a5.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_024a5.dir/CheckFunctionExists.c.o  -o cmTC_024a5 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_a20be/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a20be.dir/build.make CMakeFiles/cmTC_a20be.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_a20be.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_a20be.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a20be
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a20be.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_a20be.dir/CheckFunctionExists.c.o  -o cmTC_a20be 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_97c67/fast"
-/usr/bin/make -f CMakeFiles/cmTC_97c67.dir/build.make CMakeFiles/cmTC_97c67.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_97c67.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_97c67.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_97c67
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97c67.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_97c67.dir/CheckFunctionExists.c.o  -o cmTC_97c67 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_dfb87/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dfb87.dir/build.make CMakeFiles/cmTC_dfb87.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_dfb87.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_dfb87.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dfb87
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dfb87.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_dfb87.dir/CheckFunctionExists.c.o  -o cmTC_dfb87 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a31e8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a31e8.dir/build.make CMakeFiles/cmTC_a31e8.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a31e8.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_a31e8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a31e8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a31e8.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_a31e8.dir/CheckFunctionExists.c.o  -o cmTC_a31e8 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_1bdae/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1bdae.dir/build.make CMakeFiles/cmTC_1bdae.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_1bdae.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_1bdae.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1bdae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1bdae.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_1bdae.dir/CheckFunctionExists.c.o  -o cmTC_1bdae 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_62430/fast"
-/usr/bin/make -f CMakeFiles/cmTC_62430.dir/build.make CMakeFiles/cmTC_62430.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_62430.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_62430.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_62430
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62430.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_62430.dir/CheckFunctionExists.c.o  -o cmTC_62430 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_e750d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e750d.dir/build.make CMakeFiles/cmTC_e750d.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_e750d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_e750d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e750d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e750d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_e750d.dir/CheckFunctionExists.c.o  -o cmTC_e750d 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
+Change Dir: /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_49f35/fast"
-/usr/bin/make -f CMakeFiles/cmTC_49f35.dir/build.make CMakeFiles/cmTC_49f35.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_49f35.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_49f35.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_49f35
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49f35.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_49f35.dir/CheckFunctionExists.c.o  -o cmTC_49f35 -lICE 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-
-
-The system is: Linux - 4.15.0-48-generic - x86_64
-Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: 
-
-The output was:
-0
-
-
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
-
-The C compiler identification is GNU, found in "/home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/c++ 
-Build flags: 
-Id flags: 
-
-The output was:
-0
-
-
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
-
-The CXX compiler identification is GNU, found in "/home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
-
-Determining if the C compiler works passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec4016797059/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4016797059.dir/build.make CMakeFiles/cmTryCompileExec4016797059.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4016797059.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4016797059.dir/testCCompiler.c.o   -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec4016797059
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4016797059.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec4016797059.dir/testCCompiler.c.o  -o cmTryCompileExec4016797059 -rdynamic 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-
-
-Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec1859388601/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1859388601.dir/build.make CMakeFiles/cmTryCompileExec1859388601.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec1859388601
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1859388601.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1859388601 -rdynamic  
-Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
-Thread model: posix
-gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1859388601' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ4dT3c.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTryCompileExec1859388601 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1859388601' '-rdynamic' '-mtune=generic' '-march=x86-64'
-
-
-Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp]
-  ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1859388601/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1859388601.dir/build.make CMakeFiles/cmTryCompileExec1859388601.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »]
-  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec1859388601]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1859388601.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1859388601 -rdynamic  ]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1859388601' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ4dT3c.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTryCompileExec1859388601 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
-    arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccQ4dT3c.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [--sysroot=/] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTryCompileExec1859388601] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
-    arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
-    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTryCompileExec1859388601.dir/CMakeCCompilerABI.c.o] ==> ignore
-    arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
-    arg [-lc] ==> lib [c]
-    arg [-lgcc] ==> lib [gcc]
-    arg [--push-state] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--pop-state] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7] ==> [/usr/lib/gcc/x86_64-linux-gnu/7]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> [/usr/lib]
-  implicit libs: [c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
-
-
-Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec2151349878/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2151349878.dir/build.make CMakeFiles/cmTryCompileExec2151349878.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2151349878.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2151349878.dir/testCXXCompiler.cxx.o -c /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec2151349878
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2151349878.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec2151349878.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2151349878 -rdynamic 
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-
-
-Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec739112290/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec739112290.dir/build.make CMakeFiles/cmTryCompileExec739112290.dir/build
-make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec739112290
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec739112290.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec739112290 -rdynamic  
-Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
-Thread model: posix
-gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec739112290' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFOoYDy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTryCompileExec739112290 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-make[1] : on quitte le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec739112290' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-
-
-Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp]
-  ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec739112290/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec739112290.dir/build.make CMakeFiles/cmTryCompileExec739112290.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp »]
-  ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/arnaud/Documents/Ter_Project/3DSkeletonization/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec739112290]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec739112290.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec739112290 -rdynamic  ]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec739112290' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFOoYDy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTryCompileExec739112290 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
-    arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccFOoYDy.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [--sysroot=/] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTryCompileExec739112290] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
-    arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
-    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTryCompileExec739112290.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [-lm] ==> lib [m]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [-lc] ==> lib [c]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7] ==> [/usr/lib/gcc/x86_64-linux-gnu/7]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> [/usr/lib]
-  implicit libs: [stdc++;m;c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
+Run Build Command:"/usr/bin/make" "cmTC_68377/fast"
+/usr/bin/make -f CMakeFiles/cmTC_68377.dir/build.make CMakeFiles/cmTC_68377.dir/build
+make[1] : on entre dans le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_68377.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_68377.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_68377
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68377.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_68377.dir/CheckFunctionExists.c.o  -o cmTC_68377 -lICE 
+make[1] : on quitte le répertoire « /home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/CMakeTmp »
 
 
