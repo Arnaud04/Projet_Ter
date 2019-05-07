@@ -1,7 +1,0 @@
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/rebuild_cache.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/test.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/CMakeFiles/edit_cache.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/Code/CMakeFiles/rebuild_cache.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/Code/CMakeFiles/edit_cache.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/Code/CMakeFiles/main.dir
-/home/hanane/TER/projetGithub/Projet_Ter/3DSkeletonization/Code/CMakeFiles/test.dir
