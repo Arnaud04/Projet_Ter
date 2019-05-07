@@ -197,7 +197,7 @@ void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<
 		std::cout << std::endl;
 	
 		dualMeshPoints->InsertNextPoint(x,y,z);
-		dualMeshPoints->SetColor(1,0,0);
+		//dualMeshPoints->SetColor(1,0,0);
 }
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
