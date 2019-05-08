@@ -20,12 +20,18 @@
 #include <vector>
 #include <vtkProperty.h>
 
+#ifdef vtkGenericDataArray_h
+#define InsertNextTupleValue InsertNextTypedTuple
+#endif
+
 //#define DEBUG
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename);
 
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename);
+
+
 
 void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh,vtkSmartPointer<vtkPoints> &dualMeshPoints, vtkSmartPointer<vtkIdList> idListPoints );
 
@@ -38,6 +44,23 @@ int main ( int argc, char *argv[] )
     return EXIT_FAILURE;
   }
 
+  ///////// Color
+
+vtkSmartPointer<vtkUnsignedCharArray> colors =
+    vtkSmartPointer<vtkUnsignedCharArray>::New();
+  colors->SetNumberOfComponents(3);
+  colors->SetName ("Colors");
+  /*colors->InsertNextTupleValue(red);
+  colors->InsertNextTupleValue(green);
+  colors->InsertNextTupleValue(blue);*/
+
+
+  unsigned char red[3] = {255, 0, 0};
+  unsigned char green[3] = {0, 255, 0};
+  unsigned char blue[3] = {0, 0, 255};
+
+  //polydata->GetPointData()->SetScalars(colors);
+////////////////////
   vtkSmartPointer<vtkPolyData> dualMesh = vtkSmartPointer<vtkPolyData>::New();
   vtkSmartPointer<vtkPoints> dualMeshPoints = vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkCellArray> dualMeshCells = vtkSmartPointer<vtkCellArray>::New();
@@ -45,7 +68,13 @@ int main ( int argc, char *argv[] )
   dualMesh->SetPoints(dualMeshPoints);
   dualMesh->SetPolys(dualMeshCells);
   dualMesh->SetLines(dualMeshLines);
-    
+   
+
+  	
+  dualMesh->GetPointData()->SetScalars(colors);
+  std::cout << "Les couleurs du sommet sont " << colors ;
+
+
   std::string inputFilename = argv[1];
   vtkSmartPointer<vtkUnstructuredGrid> mesh = ReadMeshFromVTK(inputFilename);
   
@@ -195,9 +224,12 @@ void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<
 		std::cout << " y = "  << y;
 		std::cout << " z = "  << z;
 		std::cout << std::endl;
-	
+
+		
 		dualMeshPoints->InsertNextPoint(x,y,z);
-		//dualMeshPoints->SetColor(1,0,0);
+
+		
+
 }
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
