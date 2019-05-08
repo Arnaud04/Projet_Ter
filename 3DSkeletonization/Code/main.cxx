@@ -31,8 +31,6 @@ void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename);
 
-
-
 void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh,vtkSmartPointer<vtkPoints> &dualMeshPoints, vtkSmartPointer<vtkIdList> idListPoints );
 
 int main ( int argc, char *argv[] )
@@ -44,10 +42,10 @@ int main ( int argc, char *argv[] )
     return EXIT_FAILURE;
   }
 
-  ///////// Color
+  ///////// Color /////////
 
-vtkSmartPointer<vtkUnsignedCharArray> colors =
-    vtkSmartPointer<vtkUnsignedCharArray>::New();
+  vtkSmartPointer<vtkUnsignedCharArray> colors =
+  vtkSmartPointer<vtkUnsignedCharArray>::New();
   colors->SetNumberOfComponents(3);
   colors->SetName ("Colors");
   /*colors->InsertNextTupleValue(red);
@@ -60,7 +58,8 @@ vtkSmartPointer<vtkUnsignedCharArray> colors =
   unsigned char blue[3] = {0, 0, 255};
 
   //polydata->GetPointData()->SetScalars(colors);
-////////////////////
+  ////////////////////
+  
   vtkSmartPointer<vtkPolyData> dualMesh = vtkSmartPointer<vtkPolyData>::New();
   vtkSmartPointer<vtkPoints> dualMeshPoints = vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkCellArray> dualMeshCells = vtkSmartPointer<vtkCellArray>::New();
@@ -69,11 +68,8 @@ vtkSmartPointer<vtkUnsignedCharArray> colors =
   dualMesh->SetPolys(dualMeshCells);
   dualMesh->SetLines(dualMeshLines);
    
-
-  	
+   
   dualMesh->GetPointData()->SetScalars(colors);
-  std::cout << "Les couleurs du sommet sont " << colors ;
-
 
   std::string inputFilename = argv[1];
   vtkSmartPointer<vtkUnstructuredGrid> mesh = ReadMeshFromVTK(inputFilename);
@@ -84,6 +80,7 @@ vtkSmartPointer<vtkUnsignedCharArray> colors =
   vtkSmartPointer<vtkPoints> points = mesh->GetPoints();
   
   unsigned int numberOfPoints = points->GetNumberOfPoints();
+  //std:cout << "nombre de point avant ajout des sommet dual" << numberOfPoints <<endl;
   
   for (unsigned int pointCounter = 0; pointCounter < numberOfPoints;
        ++pointCounter)
@@ -220,15 +217,13 @@ void findDualPoints(vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<
 		y /= (double)idListPoints->GetNumberOfIds();
 		z /= (double)idListPoints->GetNumberOfIds();
 				
-		std::cout << " x = "  << x;
-		std::cout << " y = "  << y;
-		std::cout << " z = "  << z;
+		std::cout << x << " ";
+		std::cout << y << " ";
+		std::cout << z;
 		std::cout << std::endl;
 
 		
 		dualMeshPoints->InsertNextPoint(x,y,z);
-
-		
 
 }
 
