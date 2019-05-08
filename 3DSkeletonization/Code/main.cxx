@@ -72,8 +72,6 @@ vtkSmartPointer<vtkUnsignedCharArray> colors =
 
   	
   dualMesh->GetPointData()->SetScalars(colors);
-  std::cout << "Les couleurs du sommet sont " << colors ;
-
 
   std::string inputFilename = argv[1];
   vtkSmartPointer<vtkUnstructuredGrid> mesh = ReadMeshFromVTK(inputFilename);
