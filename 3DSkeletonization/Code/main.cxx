@@ -40,6 +40,7 @@ void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData, std::string filen
 
 void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkIdList * cellIdsNeighborsFromEdge 
 	 /*vtkSmartPointer<vtkCellArray> & polyMeshCells*/);
+	 
 
 int main ( int argc, char *argv[] )
 {
@@ -52,21 +53,21 @@ int main ( int argc, char *argv[] )
 
   ///////// Color /////////
 
-  vtkSmartPointer<vtkUnsignedCharArray> colors =
+  /*vtkSmartPointer<vtkUnsignedCharArray> colors =
   vtkSmartPointer<vtkUnsignedCharArray>::New();
   colors->SetNumberOfComponents(3);
   colors->SetName ("Colors");
   
-  /*colors->InsertNextTupleValue(red);
+  colors->InsertNextTupleValue(red);
   colors->InsertNextTupleValue(green);
   colors->InsertNextTupleValue(blue);
-  */
+  
 
   unsigned char red[3] = {255, 0, 0};
   unsigned char green[3] = {0, 255, 0};
   unsigned char blue[3] = {0, 0, 255};
-
-  //polydata->GetPointData()->SetScalars(colors);
+  
+  polydata->GetPointData()->SetScalars(colors);*/
   ////////////////////
   
   vtkSmartPointer<vtkUnstructuredGrid> dualMesh = vtkSmartPointer<vtkUnstructuredGrid>::New();
@@ -91,14 +92,15 @@ int main ( int argc, char *argv[] )
   
   
   unsigned int numberOfPoints = points->GetNumberOfPoints();
-  //std:cout << "nombre de point avant ajout des sommet dual" << numberOfPoints <<endl;
-  int timeOut = 5;
+
+  int numVertex = 5;
+  int numVertex2 = 0;
   
   for (unsigned int pointCounter = 0; pointCounter < numberOfPoints;
        ++pointCounter)
   {
 		double* point = points->GetPoint(pointCounter);
-		//std::cout << pointCounter << std::endl;
+	
 		vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
 		mesh->GetPointCells(pointCounter, adjacentCells);
 
@@ -119,7 +121,7 @@ int main ( int argc, char *argv[] )
             {
               if (vertices->GetId(k) != pointCounter)
                 neighbouringVertices.push_back(vertices->GetId(k));
-                
+           
             }
            }
 		
@@ -127,14 +129,12 @@ int main ( int argc, char *argv[] )
 		 std::sort(neighbouringVertices.begin(), neighbouringVertices.end(), std::greater<int>());
 		 auto last  = std::unique(neighbouringVertices.begin(), neighbouringVertices.end());
 		 neighbouringVertices.erase(last, neighbouringVertices.end());
-		 //std::cout << "Les sommets voisins du " << pointCounter << " sont ";
+
 		 for (unsigned int i = 0;i < neighbouringVertices.size();++i)
 		 {
-			//std::cout << " " << neighbouringVertices[i];
-								
-			//mesh->IsEdge(pointCounter,vertices->GetId(k));
-			//====== test ========
-			if(pointCounter==timeOut)
+			
+			//====== test : Etraire les arêtes voisines d'un sommet i ========
+			if(pointCounter == numVertex)
 			{
 				vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
 				vtkIdType p1 = pointCounter;
@@ -142,11 +142,28 @@ int main ( int argc, char *argv[] )
 				line->InsertNextId(p1);
 				line->InsertNextId(p2);
 				dualMesh->InsertNextCell(VTK_LINE, line);
+				
+				//on extrait une arête et on regarde les cellules adjacatentes au deux points de celle ci
+				//if(numVertex2 < 1)
+				//{
+					vtkSmartPointer<vtkIdList> cells = vtkSmartPointer<vtkIdList>::New();
+					//vtkIdType pointId,vtkSmartPointer<vtkIdList> &cells,vtkSmartPointer<vtkUnstructuredGrid> &mesh
+					//mes
+				
+					mesh->GetPointCells(p2,cells);
+					dualMesh->InsertNextCell(VTK_QUAD, cells);
+					mesh->GetPointCells(p1,cells);
+					dualMesh->InsertNextCell(VTK_QUAD, cells);
+					numVertex2 ++;
+				//}
+				
+				//dualMesh->Set
 			}
+			
 		 }
 		 
 		 dualMesh->SetPoints(points);
-		 //std::cout << std::endl;
+	
     }
 
   }
@@ -189,7 +206,7 @@ int main ( int argc, char *argv[] )
        ++cellCounter)
   {
 		//std::cout << "Les ids des points de la cellule " << cellCounter << " sont ";
-		std::vector<vtkIdType> CellPointsId;
+		std::vector<vtkIdType> CellPoints;
 		
 		//======= set dual point  ========
 		
@@ -225,8 +242,7 @@ int main ( int argc, char *argv[] )
 		delete[] cellData;    
   }
   
-  
-  
+ 
   
   //Write the dual dual PolyData.
   std::stringstream ssDualDual; 
@@ -285,7 +301,6 @@ void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idLi
 	//On stocke les identifiant des cellules voisines de chaque cellule (correspondant à l'indice de nos sommets duals)
 	//mesh->GetCellNeighbors(cellCounter,idListPoints, neighborCellIds);
 	
-	//std::cout << neighborCellIds->GetNumberOfIds() << " ";
 	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
 	vtkIdType p1 = cellCounter;
 	line->InsertNextId(p1);
