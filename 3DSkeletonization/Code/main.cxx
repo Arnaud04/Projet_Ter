@@ -336,6 +336,7 @@ void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellI
     _mesh->GetCellNeighbors(cellId,  edgeByTwoPtIds,  cellIdsNeighborsFromEdge);
 }
 
+
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename)
 {
