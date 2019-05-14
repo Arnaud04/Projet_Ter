@@ -39,6 +39,8 @@ void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idLi
 void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId,
 	vtkCellArray * cells /*vtkSmartPointer<vtkCellArray> & polyMeshCells*/);
 
+bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId1, vtkIdType cellId2);
+
 void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData, std::string filename);
 
 
@@ -153,12 +155,40 @@ void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellI
 
   std::cout << "number id" <<cellIdsNeighborsFromEdge->GetNumberOfIds() <<endl;
 
-  // Stock all the points from Current Cell in vtkCell
+  // Stock all the points from Current Cell in vtkCellArray
   for (int counterCurrentCell = 0; counterCurrentCell < cellIdsNeighborsFromEdge->GetNumberOfIds(); counterCurrentCell++) {
 		vtkIdType idCurrentCell = cellIdsNeighborsFromEdge->GetId(counterCurrentCell);
 		cells->InsertNextCell(_mesh->GetCell(idCurrentCell));
 	}
 
+}
+
+bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId1, vtkIdType cellId2) {
+	/**
+		*	compare two cell by their	faces, determine if they are adjacent.
+		*/
+
+	// Recovere all points ids from each cell
+	vtkSmartPointer<vtkIdList> ptIdsFromCell1 = vtkSmartPointer<vtkIdList>::New();
+	vtkSmartPointer<vtkIdList> ptIdsFromCell2 = vtkSmartPointer<vtkIdList>::New();
+	_mesh->GetCellPoints(cellId1, ptIdsFromCell1);
+	_mesh->GetCellPoints(cellId2, ptIdsFromCell2);
+
+	// Course all points ids from each cell and add the points ids common in list
+	vtkSmartPointer<vtkIdList> resultPointsIdsCommonCompareFromCells = vtkSmartPointer<vtkIdList>::New();
+	for (int counterPointIdFromCell1 = 0; counterPointIdFromCell1 < ptIdsFromCell1->GetNumberOfIds(); counterPointIdFromCell1++) {
+		for (int counterPointIdFromCell2 = 0; counterPointIdFromCell2 < ptIdsFromCell2->GetNumberOfIds(); counterPointIdFromCell2++) {
+			if (ptIdsFromCell1->GetId(counterPointIdFromCell1) == ptIdsFromCell2->GetId(counterPointIdFromCell2)) {
+				resultPointsIdsCommonCompareFromCells->InsertUniqueId(ptIdsFromCell1->GetId(counterPointIdFromCell1));
+			}
+		}
+	}
+
+	// true if face common
+	if (resultPointsIdsCommonCompareFromCells->GetNumberOfIds() >= 3)
+		return true;
+
+	return false;
 }
 
 void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData,
@@ -290,11 +320,11 @@ int main ( int argc, char *argv[] )
 	// --------- Set DualMesh --------------
 	// TODO : Test
 	// Meth 1 :
-	//dulaMesh->SetCells(VTK_TETRA, cells);
+	//dualMesh->SetCells(VTK_TETRA, cells);
 
-	// Meth 2 :
-	//dualMesh->SetPoints(points);
-	//dulaMesh->SetCells(VTK_TETRA, cells);
+	// Meth 2 : => Functional
+	dualMesh->SetPoints(points);
+	dualMesh->SetCells(VTK_TETRA, cells);
 
 	// Meth 3 :
 	/*for (int counterCurrentCell = 0; counterCurrentCell < cells->GetNumberOfCells(); counterCurrentCell++) {
@@ -302,11 +332,7 @@ int main ( int argc, char *argv[] )
 		dualMesh->InsertNextCell(VTK_POLYGON, ptsIdsFromCurrentCell);
 	}*/
 	// -------------------------------------
-
-	//TODO : vtkCellArray need instancied by vtkCell (function insert-> nextCell ) => old task
-
-	/*dualMeshCells -> InsertNextCell(cells); // old => vtkCell * cells
-	dualMesh -> SetCells(VTK_POLYGON, dualMeshCells);*/
+	std::cout << "compare cells 0 and 1 by faces" << compareCellsByFaces(mesh, 0, 3) << endl;
 
   /**
      Create the cell data to store the index to the dual vertex of the cell.
