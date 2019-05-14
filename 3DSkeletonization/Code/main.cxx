@@ -43,7 +43,7 @@ bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType
 
 void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData, std::string filename);
 
-
+ 
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename)
@@ -104,17 +104,14 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 
 }
 
-void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+void setDuaLine(int count, vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
 	 vtkSmartPointer<vtkUnstructuredGrid> &dualMesh)
 {
 
-	//les cellules voisines d'une cellule primale correspond aux points voisins d'un voisin Dual
 
-	//vtkSmartPointer<vtkIdList> neighborCellIds = vtkSmartPointer<vtkIdList>::New();
-
-	//On stocke les identifiant des cellules voisines de chaque cellule (correspondant à l'indice de nos sommets duals)
-	//mesh->GetCellNeighbors(cellCounter,idListPoints, neighborCellIds);
-
+	
+	
+	/*
 	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
 	vtkIdType p1 = cellCounter;
 	line->InsertNextId(p1);
@@ -131,7 +128,7 @@ void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idLi
 
 		line->DeleteId(p2);
 	}
-
+	*/
 
 }
 
@@ -155,10 +152,13 @@ void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellI
 
   std::cout << "number id" <<cellIdsNeighborsFromEdge->GetNumberOfIds() <<endl;
 
+  cells->InsertNextCell(_mesh->GetCell(cellId));
+  
   // Stock all the points from Current Cell in vtkCellArray
   for (int counterCurrentCell = 0; counterCurrentCell < cellIdsNeighborsFromEdge->GetNumberOfIds(); counterCurrentCell++) {
 		vtkIdType idCurrentCell = cellIdsNeighborsFromEdge->GetId(counterCurrentCell);
 		cells->InsertNextCell(_mesh->GetCell(idCurrentCell));
+		std :: cout << counterCurrentCell <<endl;
 	}
 
 }
@@ -315,7 +315,7 @@ int main ( int argc, char *argv[] )
   }
 
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
-  getEdgeCells(mesh, 0, cells);
+	getEdgeCells(mesh, 0, cells);
 
 	// --------- Set DualMesh --------------
 	// TODO : Test
