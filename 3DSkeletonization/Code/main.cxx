@@ -36,14 +36,13 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
 	 vtkSmartPointer<vtkUnstructuredGrid> &dualMesh);
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId,
-	vtkCellArray * cells /*vtkSmartPointer<vtkCellArray> & polyMeshCells*/);
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells);
 
 bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId1, vtkIdType cellId2);
 
 void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData, std::string filename);
 
- 
+
 
 void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 			std::string filename)
@@ -109,8 +108,8 @@ void setDuaLine(int count, vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idL
 {
 
 
-	
-	
+
+
 	/*
 	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
 	vtkIdType p1 = cellCounter;
@@ -132,7 +131,7 @@ void setDuaLine(int count, vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idL
 
 }
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells /*vtkSmartPointer<vtkCellArray> & polyMeshCells*/) {
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells) {
 	/**
 		* Get the neightbors cells at an edge
 		*/
@@ -144,21 +143,17 @@ void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellI
 
   // two points ids !defined in tough! forms a segment of current cell
   vtkSmartPointer<vtkIdList> edgeByTwoPtIds = vtkSmartPointer<vtkIdList>::New();
-  edgeByTwoPtIds->InsertNextId(/*ptIdsFromCell->GetId(5)*/5);
-  edgeByTwoPtIds->InsertNextId(/*ptIdsFromCell->GetId(6)*/6);
+  edgeByTwoPtIds->InsertNextId(5);
+  edgeByTwoPtIds->InsertNextId(6);
 
   vtkSmartPointer<vtkIdList> cellIdsNeighborsFromEdge = vtkSmartPointer<vtkIdList>::New();
   _mesh->GetCellNeighbors(cellId,  edgeByTwoPtIds,  cellIdsNeighborsFromEdge);
 
-  std::cout << "number id" <<cellIdsNeighborsFromEdge->GetNumberOfIds() <<endl;
-
-  cells->InsertNextCell(_mesh->GetCell(cellId));
-  
   // Stock all the points from Current Cell in vtkCellArray
+	cells->InsertNextCell(_mesh->GetCell(cellId));
   for (int counterCurrentCell = 0; counterCurrentCell < cellIdsNeighborsFromEdge->GetNumberOfIds(); counterCurrentCell++) {
 		vtkIdType idCurrentCell = cellIdsNeighborsFromEdge->GetId(counterCurrentCell);
 		cells->InsertNextCell(_mesh->GetCell(idCurrentCell));
-		std :: cout << counterCurrentCell <<endl;
 	}
 
 }
