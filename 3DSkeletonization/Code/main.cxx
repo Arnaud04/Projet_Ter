@@ -34,7 +34,7 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 	 vtkSmartPointer<vtkIdList> &idListPoints);
 
 void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-	 vtkSmartPointer<vtkUnstructuredGrid> &dualMesh);
+	vtkSmartPointer<vtkUnstructuredGrid> &dualMesh);
 
 void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells);
 
@@ -103,31 +103,72 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 
 }
 
-void setDuaLine(int count, vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-	 vtkSmartPointer<vtkUnstructuredGrid> &dualMesh)
+void setDuaLine(vtkCellArray cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+     vtkSmartPointer<vtkUnstructuredGrid> &dualMesh)
 {
 
 
+    vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
+    vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
+    vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
 
+    //vtkIdType cellCounter1 = 0;
+    //vtkIdType cellCounter2 = 0;
 
-	/*
-	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-	vtkIdType p1 = cellCounter;
-	line->InsertNextId(p1);
+    //vtkSmartPointer <vtkPoint> pointsDual1 = mesh -> GetPoints();
 
-	//On parcourt chaque voisin
-	for(int i = 0 ; i <idListPoints->GetNumberOfIds();i++)
-	{
+    std::cout<<cells->GetNextCell(idListPoints1)<<" ";
 
-		vtkIdType p2 = idListPoints->GetId(i);
+    for (int cellCounter1=0;cellCounter1<8;cellCounter1++/cellCounter1 = 0 ; cells->GetNextCell(idListPoints1) ; cellCounter1 ++/)
+    {
+        //vtkIdType pointsDual1 = idListPoints1->GetId(i);
+        //mesh->GetPoint(v,p);
+        std::cout << "cell " << cellCounter1 <<" neigbors of : ";
+        for (int cellCounter2=0; cellCounter2<8; cellCounter2++/cellCounter2 = 0 ; cells->GetNextCell(idListPoints2) ; cellCounter2 ++/)
+        {
+            if(cellCounter2 != cellCounter1)
+                if(compareCellsByFaces(mesh, cellCounter1, cellCounter2));
+                {
 
-		line->InsertNextId(p2);
+                    std::cout << cellCounter2 << " ";
+                    //line->InsertNextId(/mesh->GetId(/cellCounter1/)/);
+                    //line->InsertNextId(/mesh->GetId(/cellCounter2/)*/);
+                    //dualMesh->InsertNextCell(VTK_LINE, line);
+                }
+        }
+        std::cout<< endl;
+    }
+	/*for (cellCounter2 = 0, primalCells->InitTraversal();
+    	primalCells->GetNextCell(idListPoints2) ;
+        ++cellCounter2)
+    {
+        if(cellCounter2 != cellCounter)
+            if(compareCellsByFaces(mesh, cellCounter, cellCounter2));
+            {
+                line->InsertNextId(cellCounter);
+                line->InsertNextId(cellCounter2);
+                dualMesh->InsertNextCell(VTK_LINE, line);
+            }
+    }*/
 
-		//dualMesh->InsertNextCell(VTK_LINE, line);
+    /*
+    vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
+    vtkIdType p1 = cellCounter;
+    line->InsertNextId(p1);
 
-		line->DeleteId(p2);
-	}
-	*/
+    //On parcourt chaque voisin
+    for(int i = 0 ; i <idListPoints->GetNumberOfIds();i++)
+    {
+
+        vtkIdType p2 = idListPoints->GetId(i);
+
+        line->InsertNextId(p2);
+
+        //dualMesh->InsertNextCell(VTK_LINE, line);
+
+        line->DeleteId(p2);
+    }
+    */
 
 }
 
