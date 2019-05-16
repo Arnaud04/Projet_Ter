@@ -30,13 +30,13 @@ void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData, std::string f
 
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename);
 
-void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &dualMeshPoints,
+void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &intermediaryMeshPoints,
 	 vtkSmartPointer<vtkIdList> &idListPoints);
 
-void setDuaLine(int count,vtkIdType cellCounter, vtkSmartPointer<vtkIdList> idListPoints, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-	vtkSmartPointer<vtkUnstructuredGrid> &dualMesh, vtkSmartPointer<vtkPoints> & _dualMeshPoints);
+void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+      vtkSmartPointer<vtkUnstructuredGrid> & dualMesh, vtkIdList * idsCells);
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells);
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells, vtkIdList * idsCells);
 
 bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId1, vtkIdType cellId2);
 
@@ -70,7 +70,7 @@ vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename)
   return polyData;
 }
 
-void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &dualMeshPoints,
+void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &dualMesh,
 	 vtkSmartPointer<vtkIdList> &idListPoints)
 {
 	 	double p[3];
@@ -99,12 +99,54 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 			std::cout << std::endl;
 		}
 
-		dualMeshPoints->InsertNextPoint(x,y,z);
+		dualMesh->InsertNextPoint(x,y,z);
 
 }
 
+
+/*
+void setDuaLine(vtkCellArray *cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+	 vtkSmartPointer<vtkUnstructuredGrid> &intermediaryMesh)
+{
+
+	
+	vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
+	vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
+	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
+		
+	//vtkIdType cellCounter1 = 0;
+	//vtkIdType cellCounter2 = 0;
+
+	//vtkSmartPointer <vtkPoint> pointsDual1 = mesh -> GetPoints();
+	
+	std::cout<<cells->GetNextCell(idListPoints1)<<" ";
+	
+	for (int cellCounter1=0;cellCounter1<8;cellCounter1++)
+    {
+		//vtkIdType pointsDual1 = idListPoints1->GetId(i);
+		//mesh->GetPoint(v,p);
+		std::cout << "cell " << cellCounter1 <<" neigbors of : ";
+		for (int cellCounter2=0; cellCounter2<8; cellCounter2++)
+		{
+			if(cellCounter2 != cellCounter1)
+				if(compareCellsByFaces(mesh, cellCounter1, cellCounter2));
+				{
+					
+					std::cout << cellCounter2 << " ";
+					line->InsertNextId(cellCounter1);
+					//line->InsertNextId(cellCounter2);
+					//intermediaryMesh->InsertNextCell(VTK_LINE, line);
+				}
+		}
+		std::cout<< endl;
+	}
+	
+	
+}*/
+
+
 void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-     vtkSmartPointer<vtkUnstructuredGrid> &dualMesh, vtkSmartPointer<vtkPoints> & _dualMeshPoints)
+      vtkSmartPointer<vtkUnstructuredGrid> & dualMesh, vtkIdList * idsCells)
 {
 	/* -- Examples Set
 	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
@@ -118,8 +160,8 @@ void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh
 
     vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
     vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
-    vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-
+	
+	int counter = 0;
     //vtkIdType cellCounter1 = 0;
     //vtkIdType cellCounter2 = 0;
 
@@ -127,62 +169,41 @@ void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh
 
 	//vtkSmartPointer<vtkCellArray> primalCells = mesh->GetCells();
 
+    vtkSmartPointer<vtkIdList> polygon = vtkSmartPointer<vtkIdList>::New();
     std::cout<<cells->GetNextCell(idListPoints1)<<" ";
 
-    for (int cellCounter1=0;cellCounter1<8;cellCounter1++/*cellCounter1 = 0 ; cells->GetNextCell(idListPoints1) ; cellCounter1 ++*/)
+    std::cout << idsCells->GetNumberOfIds() << std::endl; 
+    for (int cellCounter1=0;cellCounter1 < idsCells->GetNumberOfIds() ;++cellCounter1)
     {
-        //vtkIdType pointsDual1 = idListPoints1->GetId(i);
-        //mesh->GetPoint(v,p);
-        std::cout << "cell " << cellCounter1 <<" neigbors of : ";
-        for (int cellCounter2=0; cellCounter2<8; cellCounter2++/*cellCounter2 = 0 ; cells->GetNextCell(idListPoints2) ; cellCounter2 ++*/)
+        vtkIdType p1 = idsCells->GetId(cellCounter1);
+        
+        std::cout << "cell id [ " << p1 <<"] neigbors of : ";
+        for (int cellCounter2=0; cellCounter2 < idsCells->GetNumberOfIds(); ++cellCounter2
         {
-            if(cellCounter2 != cellCounter1)
-                if(compareCellsByFaces(mesh, cellCounter1, cellCounter2));
+	    vtkIdType p2 = idsCells->GetId(cellCounter2);
+			
+            if(p1 != p2)
+            {
+                if(compareCellsByFaces(mesh, p1, p2))
                 {
-
-                    std::cout << cellCounter2 << " ";
-                    line->InsertNextId(_dualMeshPoints->GetId(cellCounter1)/*mesh->GetId(/cellCounter1/)*/);
-                    //line->InsertNextId(/*mesh->GetId(/cellCounter2/)*/);
-                    //dualMesh->InsertNextCell(VTK_LINE, line);
+		  //vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
+		  std::cout << p2 << " ";
+		  //line->InsertNextId(p1);
+		  //line->InsertNextId(p2);
+		  polygon->InsertUniqueId(p1);
+		  polygon->InsertUniqueId(p2);
+		  //dualMesh->InsertNextCell(VTK_LINE, line);
+		  ++counter;
                 }
+            }
         }
         std::cout<< endl;
     }
-	/*for (cellCounter2 = 0, primalCells->InitTraversal();
-    	primalCells->GetNextCell(idListPoints2) ;
-        ++cellCounter2)
-    {
-        if(cellCounter2 != cellCounter)
-            if(compareCellsByFaces(mesh, cellCounter, cellCounter2));
-            {
-                line->InsertNextId(cellCounter);
-                line->InsertNextId(cellCounter2);
-                dualMesh->InsertNextCell(VTK_LINE, line);
-            }
-    }*/
-
-    /*
-    vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-    vtkIdType p1 = cellCounter;
-    line->InsertNextId(p1);
-
-    //On parcourt chaque voisin
-    for(int i = 0 ; i <idListPoints->GetNumberOfIds();i++)
-    {
-
-        vtkIdType p2 = idListPoints->GetId(i);
-
-        line->InsertNextId(p2);
-
-        //dualMesh->InsertNextCell(VTK_LINE, line);
-
-        line->DeleteId(p2);
-    }
-    */
+    dualMesh->InsertNextCell(VTK_POLYGON, polygon);
 
 }
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells) {
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells, vtkIdList * idsCells) {
 	/**
 		* Get the neightbors cells at an edge
 		*/
@@ -199,12 +220,14 @@ void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellI
 
   vtkSmartPointer<vtkIdList> cellIdsNeighborsFromEdge = vtkSmartPointer<vtkIdList>::New();
   _mesh->GetCellNeighbors(cellId,  edgeByTwoPtIds,  cellIdsNeighborsFromEdge);
+  idsCells->InsertNextId(cellId);
 
   // Stock all the points from Current Cell in vtkCellArray
-	cells->InsertNextCell(_mesh->GetCell(cellId));
+  cells->InsertNextCell(_mesh->GetCell(cellId));
   for (int counterCurrentCell = 0; counterCurrentCell < cellIdsNeighborsFromEdge->GetNumberOfIds(); counterCurrentCell++) {
 		vtkIdType idCurrentCell = cellIdsNeighborsFromEdge->GetId(counterCurrentCell);
 		cells->InsertNextCell(_mesh->GetCell(idCurrentCell));
+		idsCells->InsertNextId(idCurrentCell);
 	}
 
 }
@@ -263,15 +286,22 @@ int main ( int argc, char *argv[] )
   }
 
 
+  vtkSmartPointer<vtkUnstructuredGrid> intermediaryMesh = vtkSmartPointer<vtkUnstructuredGrid>::New();
+  vtkSmartPointer<vtkPoints> intermediaryMeshPoints = vtkSmartPointer<vtkPoints>::New();
+  vtkSmartPointer<vtkCellArray> intermediaryMeshCells = vtkSmartPointer<vtkCellArray>::New();
+  vtkSmartPointer<vtkCellArray> intermediaryMeshLines = vtkSmartPointer<vtkCellArray>::New();
+  intermediaryMesh->SetPoints(intermediaryMeshPoints);
+
+  //intermediaryMesh->SetPolys(intermediaryMeshCells);
+  //intermediaryMesh->SetLines(intermediaryMeshLines);
+  //intermediaryMesh->SetCells(intermediaryMeshLines);
+
   vtkSmartPointer<vtkUnstructuredGrid> dualMesh = vtkSmartPointer<vtkUnstructuredGrid>::New();
   vtkSmartPointer<vtkPoints> dualMeshPoints = vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkCellArray> dualMeshCells = vtkSmartPointer<vtkCellArray>::New();
   vtkSmartPointer<vtkCellArray> dualMeshLines = vtkSmartPointer<vtkCellArray>::New();
   dualMesh->SetPoints(dualMeshPoints);
 
-  //dualMesh->SetPolys(dualMeshCells);
-  //dualMesh->SetLines(dualMeshLines);
-  //dualMesh->SetCells(dualMeshLines);
 
   std::string inputFilename = argv[1];
   vtkSmartPointer<vtkUnstructuredGrid> mesh = ReadMeshFromVTK(inputFilename);
@@ -329,7 +359,7 @@ int main ( int argc, char *argv[] )
 					vtkIdType p2 = neighbouringVertices[i];
 					line->InsertNextId(p1);
 					line->InsertNextId(p2);
-					dualMesh->InsertNextCell(VTK_LINE, line);
+					intermediaryMesh->InsertNextCell(VTK_LINE, line);
 
 					//on extrait une arête et on regarde les cellules adjacatentes au deux points de celle ci
 					//if(numVertex2 < 1)
@@ -340,42 +370,44 @@ int main ( int argc, char *argv[] )
 
 
 						//mesh->GetPointCells(p2,cells);
-						//dualMesh->InsertNextCell(VTK_QUAD, cells);
+						//intermediaryMesh->InsertNextCell(VTK_QUAD, cells);
 						//mesh->GetPointCells(p1,cells);
-						//dualMesh->InsertNextCell(VTK_TRIANGLE, cells);
+						//intermediaryMesh->InsertNextCell(VTK_TRIANGLE, cells);
 
 
 
 						//numVertex2 ++;
 					//}
 
-					//dualMesh->Set
+					//intermediaryMesh->Set
 
 				}
 
 			}
-			//dualMesh->SetPoints(points);
+			//intermediaryMesh->SetPoints(points);
 
 		}
 
   }
 
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
-	getEdgeCells(mesh, 0, cells);
+	vtkSmartPointer<vtkIdList> idsCells = vtkSmartPointer<vtkIdList>::New();
+	 
+	getEdgeCells(mesh, 0, cells, idsCells);
 
 	// --------- Set DualMesh --------------
 	// TODO : Test
 	// Meth 1 :
-	//dualMesh->SetCells(VTK_TETRA, cells);
+	//intermediaryMesh->SetCells(VTK_TETRA, cells);
 
 	// Meth 2 : => Functional
-	dualMesh->SetPoints(points);
-	dualMesh->SetCells(VTK_TETRA, cells);
+	//intermediaryMesh->SetPoints(points);
+	//intermediaryMesh->SetCells(VTK_TETRA, cells);
 
 	// Meth 3 :
 	/*for (int counterCurrentCell = 0; counterCurrentCell < cells->GetNumberOfCells(); counterCurrentCell++) {
 		vtkSmartPointer<vtkIdList> ptsIdsFromCurrentCell = cells->;
-		dualMesh->InsertNextCell(VTK_POLYGON, ptsIdsFromCurrentCell);
+		intermediaryMesh->InsertNextCell(VTK_POLYGON, ptsIdsFromCurrentCell);
 	}*/
 	// -------------------------------------
 	std::cout << "compare cells 0 and 1 by faces" << compareCellsByFaces(mesh, 0, 3) << endl;
@@ -426,12 +458,12 @@ int main ( int argc, char *argv[] )
 
 		//======= sel dual line ======
 
-		//setDuaLine(count, cellCounter, idListPoints, mesh, dualMesh);
+		//setDuaLine(count, cellCounter, idListPoints, mesh, intermediaryMesh);
 
 
 		count ++;
 
-		//dualMeshCells->InsertNextCell(...
+		//intermediaryMeshCells->InsertNextCell(...
 
 		/*
 		   Adding data to the primal and dual meshes. We have to store the coordinates
@@ -454,8 +486,9 @@ int main ( int argc, char *argv[] )
 		delete[] cellData;
   }
 
-  setDuaLine(cells, mesh, dualMesh);
-  dualMesh->SetLines(VTK_LINE, );
+  dualMesh->SetPoints(dualMeshPoints);
+  setDuaLine(cells, mesh, dualMesh,idsCells);
+  //dualMesh->SetCells(VTK_LINE, cells);
 
   //Write the dual dual PolyData.
   std::stringstream ssDualDual;
@@ -463,8 +496,12 @@ int main ( int argc, char *argv[] )
   WriteMeshToVTK(mesh, ssDualDual.str().c_str());
 
   std::stringstream ssDualDual2;
-  ssDualDual2 << "ProcessedDualMesh";
-  WriteMeshToVTK(dualMesh, ssDualDual2.str().c_str());
+  ssDualDual2 << "ProcessedintermediaryMesh";
+  WriteMeshToVTK(intermediaryMesh, ssDualDual2.str().c_str());
 
+  std::stringstream ssDualDual3;
+  ssDualDual3 << "ProcessedDualMesh";
+  WriteMeshToVTK(dualMesh, ssDualDual3.str().c_str());
+  
   return EXIT_SUCCESS;
 }
