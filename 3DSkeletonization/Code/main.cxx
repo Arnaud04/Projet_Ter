@@ -19,6 +19,7 @@
 #include <map>
 #include <vector>
 #include <vtkProperty.h>
+typedef std::pair<std::vector<vtkIdType>,std::vector<vtkIdType>> PairType;
 
 #ifdef vtkGenericDataArray_h
 #define InsertNextTupleValue InsertNextTypedTuple
@@ -31,12 +32,13 @@ void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData, std::string f
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename);
 
 void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstructuredGrid> &mesh, vtkSmartPointer<vtkPoints> &intermediaryMeshPoints,
-	 vtkSmartPointer<vtkIdList> &idListPoints);
+	 									vtkSmartPointer<vtkIdList> &idListPoints);
 
-void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-      vtkSmartPointer<vtkUnstructuredGrid> & dualMesh, vtkIdList * idsCells);
+vtkIdType createDualPolygon(vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+								      			vtkSmartPointer<vtkUnstructuredGrid> & lambdaMesh, vtkIdList * idsCells);
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells, vtkIdList * idsCells);
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, PairType* element_mapEdge/*vtkIdType cellId*/
+									,vtkCellArray * cells, vtkIdList * idsCells);
 
 bool compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId1, vtkIdType cellId2);
 
@@ -63,7 +65,7 @@ void WriteMeshToVTK(vtkSmartPointer<vtkUnstructuredGrid> polyData,
 vtkSmartPointer<vtkUnstructuredGrid> ReadMeshFromVTK(std::string filename)
 {
   vtkSmartPointer<vtkUnstructuredGridReader> reader =
-    vtkSmartPointer<vtkUnstructuredGridReader>::New();
+	vtkSmartPointer<vtkUnstructuredGridReader>::New();
   reader->SetFileName ( filename.c_str() );
   reader->Update();
 
@@ -105,167 +107,96 @@ void findDualPoints(int count, vtkIdType cellCounter, vtkSmartPointer<vtkUnstruc
 
 }
 
-
-/*
-void setDuaLine(vtkCellArray *cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-	 vtkSmartPointer<vtkUnstructuredGrid> &intermediaryMesh)
+vtkIdType createDualPolygon(vtkSmartPointer<vtkUnstructuredGrid> &mesh,
+      vtkSmartPointer<vtkUnstructuredGrid> & lambdaMesh, vtkIdList * idsCells)
 {
 
+    //vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
+    //vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
 
-	vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
-	vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
-	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-
-	//vtkIdType cellCounter1 = 0;
-	//vtkIdType cellCounter2 = 0;
-
-	//vtkSmartPointer <vtkPoint> pointsDual1 = mesh -> GetPoints();
-
-	std::cout<<cells->GetNextCell(idListPoints1)<<" ";
-
-	for (int cellCounter1=0;cellCounter1<8;cellCounter1++)
-    {
-		//vtkIdType pointsDual1 = idListPoints1->GetId(i);
-		//mesh->GetPoint(v,p);
-		std::cout << "cell " << cellCounter1 <<" neigbors of : ";
-		for (int cellCounter2=0; cellCounter2<8; cellCounter2++)
-		{
-			if(cellCounter2 != cellCounter1)
-				if(compareCellsByFaces(mesh, cellCounter1, cellCounter2));
-				{
-
-					std::cout << cellCounter2 << " ";
-					line->InsertNextId(cellCounter1);
-					//line->InsertNextId(cellCounter2);
-					//intermediaryMesh->InsertNextCell(VTK_LINE, line);
-				}
-		}
-		std::cout<< endl;
-	}
-
-
-}*/
-
-
-void setDuaLine(vtkCellArray * cells, vtkSmartPointer<vtkUnstructuredGrid> &mesh,
-      vtkSmartPointer<vtkUnstructuredGrid> & dualMesh, vtkIdList * idsCells)
-{
-	/* -- Examples Set
-	vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-	vtkIdType p1 = pointCounter;
-	vtkIdType p2 = neighbouringVertices[i];
-	line->InsertNextId(p1);
-	line->InsertNextId(p2);
-	dualMesh->InsertNextCell(VTK_LINE, line);
-	*/
-
-
-    vtkSmartPointer<vtkIdList> idListPoints1 = vtkSmartPointer<vtkIdList>::New();
-    vtkSmartPointer<vtkIdList> idListPoints2 = vtkSmartPointer<vtkIdList>::New();
-
-	int counter = 0;
-    //vtkIdType cellCounter1 = 0;
-    //vtkIdType cellCounter2 = 0;
-
-    //vtkSmartPointer <vtkPoint> pointsDual1 = mesh -> GetPoints();
-
-	//vtkSmartPointer<vtkCellArray> primalCells = mesh->GetCells();
+  	//int counter = 0;
 
     vtkSmartPointer<vtkIdList> polygon = vtkSmartPointer<vtkIdList>::New();
     /*std::cout<<cells->GetNextCell(idListPoints1)<<" ";
 
     std::cout << idsCells->GetNumberOfIds() << std::endl;*/
-	vtkIdType idPreviousCell = -1;
-	vtkIdType idCurrentCell = idsCells->GetId(0);
+		vtkIdType idPreviousCell = -1;
+		vtkIdType idCurrentCell = idsCells->GetId(0);
 
-	// ------------------------------- Last Method
-	while (polygon->GetNumberOfIds() < idsCells->GetNumberOfIds())
-	{
-	  vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
-	  compareCellsByFaces(mesh, idCurrentCell, idsCells, adjacentCells);
-	std:cout << adjacentCells->GetNumberOfIds() << std::endl; 
-	  if (adjacentCells->GetNumberOfIds() == 2)
-	  {  
-	    polygon->InsertNextId(idCurrentCell);
-	    
-	    if (idPreviousCell == -1)
-	    {
-	      idPreviousCell = idCurrentCell;
-	      idCurrentCell = adjacentCells->GetId(0);
-	    }
-	    else
-	    {
-	      if(idPreviousCell == adjacentCells->GetId(0))
-	      {
-		idPreviousCell = idCurrentCell;
-		idCurrentCell = adjacentCells->GetId(1);
-	      }
-	      else
-	      {
-		idPreviousCell = idCurrentCell;
-		idCurrentCell = adjacentCells->GetId(0);
-	      }
-	    }
-	    
-	  }
-	  else
-	    break;
-	  
-	}
-	
-	// ------------------------------- Other Method
-	/*for (int cellCounter1=0; cellCounter1 < idsCells->GetNumberOfIds(); ++cellCounter1)
-    {
-        vtkIdType p1 = idsCells->GetId(cellCounter1);
+		// ------------------------------- Last Method
+		while (polygon->GetNumberOfIds() < idsCells->GetNumberOfIds())
+		{
+		  vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
 
-        std::cout << "cell id [ " << p1 <<"] neigbors of : ";
-        for (int cellCounter2=0; cellCounter2 < idsCells->GetNumberOfIds(); ++cellCounter2
-        {
-	    vtkIdType p2 = idsCells->GetId(cellCounter2);
+		  compareCellsByFaces(mesh, idCurrentCell, idsCells, adjacentCells);
 
-            if(p1 != p2)
-            {
-                if(compareCellsByFaces(mesh, p1, p2))
-                {
-		  //vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-		  std::cout << p2 << " ";
-		  //line->InsertNextId(p1);
-		  //line->InsertNextId(p2);
-		  polygon->InsertUniqueId(p1);
-		  polygon->InsertUniqueId(p2);
-		  //dualMesh->InsertNextCell(VTK_LINE, line);
-		  ++counter;
-                }
-            }
-        }
-        std::cout<< endl;*/
-    //}
+		  std:cout <<"number of Id from adjacentCells"<< adjacentCells->GetNumberOfIds() << std::endl;
+		  if (adjacentCells->GetNumberOfIds() == 2)
+		  {
+		    polygon->InsertNextId(idCurrentCell);
+
+		    if (idPreviousCell == -1)
+		    {
+		      idPreviousCell = idCurrentCell;
+		      idCurrentCell = adjacentCells->GetId(0);
+		    }
+		    else
+		    {
+		      if(idPreviousCell == adjacentCells->GetId(0))
+		      {
+							idPreviousCell = idCurrentCell;
+							idCurrentCell = adjacentCells->GetId(1);
+		      }
+		      else
+		      {
+							idPreviousCell = idCurrentCell;
+							idCurrentCell = adjacentCells->GetId(0);
+		      }
+		    }
+
+		  }
+		  else
+		    break;
+
+		}
+
+
 	if (polygon->GetNumberOfIds() == idsCells->GetNumberOfIds())
-		dualMesh->InsertNextCell(VTK_POLYGON, polygon);
+		return lambdaMesh->InsertNextCell(VTK_POLYGON, polygon);
+
+	return -1;
+
 
 }
 
-void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType cellId, vtkCellArray * cells, vtkIdList * idsCells) {
+void getEdgeCells (vtkSmartPointer<vtkUnstructuredGrid> & _mesh, PairType* element_mapEdge/*vtkIdType cellId*/,
+	 								 vtkCellArray * cells, vtkIdList * idsCells) {
 	/**
 		* Get the neightbors cells at an edge
 		*/
 
   // All points ids from a cell
-  vtkSmartPointer<vtkIdList> ptIdsFromCell = vtkSmartPointer<vtkIdList>::New();
-  _mesh->GetCellPoints(cellId, ptIdsFromCell);
-
+  /*vtkSmartPointer<vtkIdList> ptIdsFromCell = vtkSmartPointer<vtkIdList>::New();
+  _mesh->GetCellPoints(cellId, ptIdsFromCell);*/
 
   // two points ids !defined in tough! forms a segment of current cell
   vtkSmartPointer<vtkIdList> edgeByTwoPtIds = vtkSmartPointer<vtkIdList>::New();
-  edgeByTwoPtIds->InsertNextId(5);
-  edgeByTwoPtIds->InsertNextId(6);
+  edgeByTwoPtIds->InsertNextId(element_mapEdge->first[0]);
+  edgeByTwoPtIds->InsertNextId(element_mapEdge->first[1]);
+
+
 
   vtkSmartPointer<vtkIdList> cellIdsNeighborsFromEdge = vtkSmartPointer<vtkIdList>::New();
-  _mesh->GetCellNeighbors(cellId,  edgeByTwoPtIds,  cellIdsNeighborsFromEdge);
-  idsCells->InsertNextId(cellId);
+
+
+  _mesh->GetCellNeighbors(element_mapEdge->second[0],edgeByTwoPtIds,  cellIdsNeighborsFromEdge);
+
+	//std::cout << " edjejdejdjedje "<< element_mapEdge->second->second->GetId(1) << endl;
+
 
   // Stock all the points from Current Cell in vtkCellArray
-  cells->InsertNextCell(_mesh->GetCell(cellId));
+	idsCells->InsertNextId(element_mapEdge->second[0]);
+  cells->InsertNextCell(_mesh->GetCell(element_mapEdge->second[0]));
   for (int counterCurrentCell = 0; counterCurrentCell < cellIdsNeighborsFromEdge->GetNumberOfIds(); counterCurrentCell++) {
 		vtkIdType idCurrentCell = cellIdsNeighborsFromEdge->GetId(counterCurrentCell);
 		cells->InsertNextCell(_mesh->GetCell(idCurrentCell));
@@ -307,38 +238,41 @@ void compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType
   /**
    *	compare cell with list cells by their faces, determine if they are adjacent.
    */
-  
+
   // Recovere all points ids from cell
   vtkSmartPointer<vtkIdList> ptIdsFromCell = vtkSmartPointer<vtkIdList>::New();
   _mesh->GetCellPoints(cellId, ptIdsFromCell);
-  
-  
+
+
   // Course all ids from list cells
   for (int counterCurrentCellOfList = 0;
        counterCurrentCellOfList < listIdsCellsToCompare->GetNumberOfIds();
-       counterCurrentCellOfList++) {
+       counterCurrentCellOfList++)
+	{
     if (listIdsCellsToCompare->GetId(counterCurrentCellOfList) != cellId)
     {
       int counterCommonPoint = 0;
       // Stock all points from current cell
       vtkSmartPointer<vtkIdList> ptIdsFromCellToCompare = vtkSmartPointer<vtkIdList>::New();
       _mesh->GetCellPoints(listIdsCellsToCompare->GetId(counterCurrentCellOfList),
-			   ptIdsFromCellToCompare);
+			   									 ptIdsFromCellToCompare);
       // Course all points ids from current cell
       for (int counterPointIdFromCellToCompare = 0;
-	   counterPointIdFromCellToCompare < ptIdsFromCellToCompare->GetNumberOfIds();
-	   counterPointIdFromCellToCompare++) {
-	// Course all points ids from each cell
-	for (int counterPointIdFromCell1 = 0;
-	     counterPointIdFromCell1 < ptIdsFromCell->GetNumberOfIds();
-	     counterPointIdFromCell1++) {
-	  if (ptIdsFromCell->GetId(counterPointIdFromCell1) == ptIdsFromCellToCompare
-	      ->GetId(counterPointIdFromCellToCompare))
-	  counterCommonPoint++;
-	}
-	if (counterCommonPoint >= 3)
-	  listIdsCellsNeighbors->InsertUniqueId(listIdsCellsToCompare
-						->GetId(counterCurrentCellOfList));
+	    counterPointIdFromCellToCompare < ptIdsFromCellToCompare->GetNumberOfIds();
+	    counterPointIdFromCellToCompare++)
+			{
+				// Course all points ids from each cell
+				for (int counterPointIdFromCell1 = 0;
+				     counterPointIdFromCell1 < ptIdsFromCell->GetNumberOfIds();
+				     counterPointIdFromCell1++)
+				{
+				  if (ptIdsFromCell->GetId(counterPointIdFromCell1) == ptIdsFromCellToCompare
+				      ->GetId(counterPointIdFromCellToCompare))
+	  				  counterCommonPoint++;
+				}
+				if (counterCommonPoint >= 3)
+	  					listIdsCellsNeighbors->InsertUniqueId(listIdsCellsToCompare
+							->GetId(counterCurrentCellOfList));
       }
     }
   }
@@ -397,8 +331,14 @@ int main ( int argc, char *argv[] )
 
   unsigned int numberOfPoints = points->GetNumberOfPoints();
 
+	//contains ids Edges in key associated with the edge and the cells that compose it
+
+  std::map<vtkIdType, PairType*> *mapEdges = new std::map<vtkIdType,PairType*>();
+
   int numVertex = 5;
   int numVertex2 = 0;
+
+	vtkIdType idEdgeCounter = 0;
 
   for (unsigned int pointCounter = 0; pointCounter < numberOfPoints;
        ++pointCounter)
@@ -407,7 +347,6 @@ int main ( int argc, char *argv[] )
 
 		vtkSmartPointer<vtkIdList> adjacentCells = vtkSmartPointer<vtkIdList>::New();
 		mesh->GetPointCells(pointCounter, adjacentCells);
-
 
 		if (adjacentCells->GetNumberOfIds() > 1)
 		{
@@ -427,57 +366,175 @@ int main ( int argc, char *argv[] )
 				}
 			}
 
-
 			std::sort(neighbouringVertices.begin(), neighbouringVertices.end(), std::greater<int>());
 			auto last  = std::unique(neighbouringVertices.begin(), neighbouringVertices.end());
 			neighbouringVertices.erase(last, neighbouringVertices.end());
 
-			for (unsigned int i = 0;i < neighbouringVertices.size();++i)
+
+			for (unsigned int i = 0; i < neighbouringVertices.size(); ++i)
 			{
 
 				//====== test : Etraire les arêtes voisines d'un sommet i ========
-				if(pointCounter == numVertex)
+
+				vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
+				std::vector<vtkIdType> edge;
+
+				vtkIdType p1 = pointCounter;
+				vtkIdType p2 = neighbouringVertices[i];
+
+				if(p1 < p2)
 				{
-					vtkSmartPointer<vtkIdList> line = vtkSmartPointer<vtkIdList>::New();
-					vtkIdType p1 = pointCounter;
-					vtkIdType p2 = neighbouringVertices[i];
-					line->InsertNextId(p1);
-					line->InsertNextId(p2);
-					intermediaryMesh->InsertNextCell(VTK_LINE, line);
+					//line->InsertNextId(p1);
+					//line->InsertNextId(p2);
 
-					//on extrait une arête et on regarde les cellules adjacatentes au deux points de celle ci
-					//if(numVertex2 < 1)
-					//{
+					edge.push_back(p1);
+					edge.push_back(p2);
 
-						//vtkIdType pointId,vtkSmartPointer<vtkIdList> &cells,vtkSmartPointer<vtkUnstructuredGrid> &mesh
-						//mes
+					vtkSmartPointer <vtkIdList> adjacentCells1 = vtkSmartPointer<vtkIdList>::New();
+					mesh->GetPointCells(p1, adjacentCells1);
+
+					vtkSmartPointer <vtkIdList> adjacentCells2 = vtkSmartPointer<vtkIdList>::New();
+					mesh->GetPointCells(p2, adjacentCells2);
+
+					//vtkSmartPointer<vtkIdList> cellsBelongEdge = vtkSmartPointer<vtkIdList>::New();
+					std::vector<vtkIdType> cellsBelongEdge;
+
+					for(int i= 0; i< adjacentCells1->GetNumberOfIds(); i++ )
+					{
+							for(int j= 0; j< adjacentCells2->GetNumberOfIds(); j++ )
+							{
+								if(adjacentCells1->GetId(i) == adjacentCells2->GetId(j))
+								{
+										//cellsBelongEdge->InsertUniqueId(adjacentCells1->GetId(i));
+										cellsBelongEdge.push_back(adjacentCells1->GetId(i));
 
 
-						//mesh->GetPointCells(p2,cells);
-						//intermediaryMesh->InsertNextCell(VTK_QUAD, cells);
-						//mesh->GetPointCells(p1,cells);
-						//intermediaryMesh->InsertNextCell(VTK_TRIANGLE, cells);
+								}
 
 
+							}
 
-						//numVertex2 ++;
-					//}
+					}
+					std::sort(cellsBelongEdge.begin(), cellsBelongEdge.end(), std::greater<vtkIdType>());
+					auto last  = std::unique(cellsBelongEdge.begin(), cellsBelongEdge.end());
+					cellsBelongEdge.erase(last, cellsBelongEdge.end());
 
-					//intermediaryMesh->Set
+					//print informations about an edge E, the twice vertex id of E and all the neigbors cell from the edge E
+					std::cout << "Id arete : " << idEdgeCounter << " -> id sommets : " << p1 << " " << p2 << " -> id cells : " ;
+
+					for(int i=0; i<cellsBelongEdge.size(); i++)
+						std::cout << cellsBelongEdge[i] <<  " ";
+					std::cout << endl;
+
+					//mapEdges->insert(std::pair<vtkIdType, vtkIdList * >(idEdgeCounter , line));
+					PairType *pairLineCells = new PairType(edge,cellsBelongEdge);
+					std::cout << " Nbr cellules :  " <<pairLineCells->first.size() <<endl;
+					std::cout << " Nbr sommet sur une arete :  " <<pairLineCells->second.size() <<endl;
+
+					mapEdges->insert(std::pair<vtkIdType, PairType*>(idEdgeCounter , pairLineCells));
+
+					//std::cout << mapEdges->at(idEdgeCounter)->first <<endl;
+
+					//std::cout << "Identifiant ligne : " << idEdgeCounter << "id sommets : " << p1 << " " << p2 <<endl;
+					idEdgeCounter ++;
 
 				}
 
 			}
-			//intermediaryMesh->SetPoints(points);
 
 		}
 
   }
 
-	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkIdList> idsCells = vtkSmartPointer<vtkIdList>::New();
 
-	getEdgeCells(mesh, 0, cells, idsCells);
+	std::map<vtkIdType,std::vector<vtkIdType>> mapPolygonByPrimalVertex;
+	std::map<vtkIdType,std::vector<vtkIdType>> mapPolygonByDualVertex;
+
+	unsigned int nEdges = 0;
+	for(std::map<vtkIdType,PairType*>::iterator it_mapEdges = mapEdges->begin(); it_mapEdges != mapEdges->end();it_mapEdges ++)
+	{
+		  vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
+	  	vtkSmartPointer<vtkIdList> idsCells = vtkSmartPointer<vtkIdList>::New();
+			getEdgeCells(mesh, it_mapEdges->second , cells, idsCells);
+
+			nEdges++;
+			vtkIdType idPolygon = createDualPolygon(mesh, dualMesh,idsCells);
+			if (idPolygon >= 0)
+			{
+				//std::cout<< " test : "<<(*it_mapEdges).second->first[0] <<endl;
+
+				// --------------------- Polygon By Primal Vertex ------------------------
+				std::map<vtkIdType,std::vector<vtkIdType>>::iterator point1Exist = mapPolygonByPrimalVertex.find((*it_mapEdges).second->first[0]);
+				if (point1Exist != mapPolygonByPrimalVertex.end())
+					mapPolygonByPrimalVertex[(*it_mapEdges).second->first[0]].push_back(idPolygon);
+					else
+					{
+						std::vector<vtkIdType> polygons;
+						polygons.push_back(idPolygon);
+						mapPolygonByPrimalVertex.insert(std::make_pair((*it_mapEdges).second->first[0],polygons));
+					}
+
+					std::map<vtkIdType,std::vector<vtkIdType>>::iterator point2Exist = mapPolygonByPrimalVertex.find((*it_mapEdges).second->first[1]);
+					if (point2Exist != mapPolygonByPrimalVertex.end())
+					mapPolygonByPrimalVertex[(*it_mapEdges).second->first[1]].push_back(idPolygon);
+					else
+					{
+						std::vector<vtkIdType> polygons;
+						polygons.push_back(idPolygon);
+						mapPolygonByPrimalVertex.insert(std::make_pair((*it_mapEdges).second->first[1],polygons));
+					}
+					// --------------------------------------------------------------------------
+					for (int counterIdsCells = 0; counterIdsCells < idsCells->GetNumberOfIds(); counterIdsCells++) {
+						std::map<vtkIdType,std::vector<vtkIdType>>::iterator dualPointExist = mapPolygonByDualVertex.find(idsCells->GetId(counterIdsCells));
+						if (dualPointExist != mapPolygonByDualVertex.end())
+							mapPolygonByDualVertex[idsCells->GetId(counterIdsCells)].push_back(idPolygon);
+						else
+						{
+							std::vector<vtkIdType> polygons;
+							polygons.push_back(idPolygon);
+							mapPolygonByDualVertex.insert(std::make_pair(idsCells->GetId(counterIdsCells), polygons));
+						}
+					}
+				}
+		//	mapPolygonByPrimalVertex.insert((*it_mapEdges).second->first[1],idPolygon);
+	}
+
+
+	//std::cout<< "Nombre edges : " << nEdges << "map number element of Polygon : "<<mapPolygonByPrimalVertex.size() << " / " << mapPolygonByPrimalVertex[12].size()<<endl;
+	for (unsigned int i = 0;i < mapPolygonByPrimalVertex.size();i++)
+		std::cout<< "Nombre de facettes pour le sommet primal : " << i  << " = " << mapPolygonByPrimalVertex[i].size()<<endl;
+	for (unsigned int i = 0;i < mapPolygonByDualVertex.size();i++)
+		std::cout<< "Nombre de facettes pour le sommet dual : " << i  << " = " << mapPolygonByDualVertex[i].size()<<endl;
+
+	//std::cout << idsCells->GetNumberOfIds()<<endl;
+
+	// ------ TODO :
+  //recup tout les point du dual qui deviendrons primal
+	//getpoints
+	//setpoints
+
+	// Course all point dual in map
+	/*for (std::map<vtkIdType, std::vector<vtkIdType>>::iterator it_mapPolygonByDualVertex = mapPolygonByDualVertex.begin(); it_mapPolygonByDualVertex != mapPolygonByDualVertex.end(); it_mapPolygonByDualVertex++)
+	{
+			if(mapPolygonByDualVertex[i].size() > 3 )
+			{
+				vtkIdType npts;
+				vtkSmartPointer<vtkIdList> idsCells = vtkSmartPointer<vtkIdList>::New();
+				// course all polygon from map iterator
+				for (std::vector<vtkIdType>::iterator it_mapIdPolygonFromVector = it_mapPolygonByDualVertex.second.begin(); it_mapIdPolygonFromVector != it_mapPolygonByDualVertex.second.end(); it_mapIdPolygonFromVector++) {
+					vtkSmartPointer<vtkIdList> pts = vtkSmartPointer<vtkIdList>::New();
+					dualMesh->GetCellPoints (it_mapIdPolygonFromVector, npts, pts);
+					for (int i = 0; i < npts; i++)
+						idsCells->InsertNextId(pts(i));
+				}
+
+				//createDualPolygon(mesh, intermediaryMesh, idsCells);
+
+				//intermediaryMesh->InsertNextCell
+			}
+	}
+	intermediaryMesh->SetPoints(dualMeshPoints);
+	*/
 
 	// --------- Set DualMesh --------------
 	// TODO : Test
@@ -495,7 +552,6 @@ int main ( int argc, char *argv[] )
 	}*/
 	// -------------------------------------
 	std::cout << "compare cells 0 and 1 by faces" << compareCellsByFaces(mesh, 0, 3) << endl;
-
   /**
      Create the cell data to store the index to the dual vertex of the cell.
      in the primal triangular cells.
@@ -542,7 +598,7 @@ int main ( int argc, char *argv[] )
 
 		//======= sel dual line ======
 
-		//setDuaLine(count, cellCounter, idListPoints, mesh, intermediaryMesh);
+		//createDualPolygon(count, cellCounter, idListPoints, mesh, intermediaryMesh);
 
 
 		count ++;
@@ -571,8 +627,9 @@ int main ( int argc, char *argv[] )
   }
 
   dualMesh->SetPoints(dualMeshPoints);
-  setDuaLine(cells, mesh, dualMesh,idsCells);
+
   //dualMesh->SetCells(VTK_LINE, cells);
+
 
   //Write the dual dual PolyData.
   std::stringstream ssDualDual;
