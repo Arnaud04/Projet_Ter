@@ -264,6 +264,82 @@ void compareCellsByFaces(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, vtkIdType
   }
 }
 
+void clearPolygonsOpen(vtkSmartPointer<vtkUnstructuredGrid> & _mesh, const std::map<vtkIdType, std::vector<vtkIdType>> & mapPolygonByDualVertex; vtkSmartPointer<vtkUnstructuredGrid> & currentMesh) {
+	/*
+		* Clear (Suppr) All polygons open from a mesh,
+		**/
+	//vtkSmartPointer<vtkPoints> pointsMesh = _mesh->GetPoints();
+	vtkSmartPointer<vtkIdList> idsPolygons = vtkSmartPointer<vtkIdList>::New();
+	vtkSmartPointer<vtkIdList> idsPolygonsToSuppr = vtkSmartPointer<vtkIdList>::New();
+	// Course all point dual in map
+	for (std::map<vtkIdType, std::vector<vtkIdType>>::iterator it_mapPolygonByDualVertex = mapPolygonByDualVertex.begin();
+	it_mapPolygonByDualVertex != mapPolygonByDualVertex.end(); it_mapPolygonByDualVertex++) {
+		// if true, we keep the dual point (probably polygons close)
+		if (it_mapPolygonByDualVertex->second.size >= 3) {
+			// Course all ids Polygons neighbors from current dual point
+			for (std::vector<vtkIdType>::iterator it_mapIdPolygonFromVector = it_mapPolygonByDualVertex->second.begin();
+			it_mapIdPolygonFromVector != it_mapPolygonByDualVertex->second.end(); it_mapIdPolygonFromVector++) {
+				idsPolygons->InsertUniqueId(*it_mapIdPolygonFromVector);
+			}
+
+			/*vtkSmartPointer<vtkIdList> idsCells = vtkSmartPointer<vtkIdList>::New();
+			// course all polygon from map iterator
+			for (std::vector<vtkIdType>::iterator it_mapIdPolygonFromVector = it_mapPolygonByDualVertex->second.begin();
+			it_mapIdPolygonFromVector != it_mapPolygonByDualVertex->second.end(); it_mapIdPolygonFromVector++) {
+				//std::cout<<*it_mapIdPolygonFromVector <<endl;
+				vtkSmartPointer<vtkIdList> pts = vtkSmartPointer<vtkIdList>::New();
+				dualMesh->GetCellPoints (*it_mapIdPolygonFromVector, pts);
+				for (int i = 0; i < pts->GetNumberOfIds(); i++)
+					idsCells->InsertNextId(pts->GetId(i));
+			}*/
+		} else { // else, we want suppr polygon
+			// Course all ids Polygons neighbors from current dual point
+			for (std::vector<vtkIdType>::iterator it_mapIdPolygonFromVector = it_mapPolygonByDualVertex->second.begin();
+			it_mapIdPolygonFromVector != it_mapPolygonByDualVertex->second.end(); it_mapIdPolygonFromVector++) {
+				//idsPolygonsToSuppr->InsertUniqueId(*it_mapIdPolygonFromVector);
+				clearNeighborsPolygonsOpenMarkedToSuppr(mesh, mapPolygonByDualVertex, *it_mapIdPolygonFromVector, idsPolygonsToSuppr);
+			}
+		}
+	}
+
+
+	//clearNeighborsPolygonsOpenMarkedToSuppr(mesh, idsPolygonsToSuppr);
+
+	for (int counterIdsPolygons = 0; counterIdsPolygons < idsPolygonsToSuppr->GetNumberOfIds(); counterIdsPolygons++) {
+		idsPolygons->DeleteId(idsPolygonsToSuppr->GetId(counterIdsPolygons));
+	}
+}
+
+void clearNeighborsPolygonsOpenMarkedToSuppr(const vtkSmartPointer<vtkUnstructuredGrid> & _mesh, std::vector<vtkIdType>> & mapPolygonByDualVertex,
+	vtkIdType * currentIdCell, vtkIdList * idsPolygonsToSuppr) {
+
+	// Flag current id cell
+	idsPolygonsToSuppr->InsertUniqueId(currentIdCell);
+
+	// Search all neighbors ids from current id cell
+	vtkSmartPointer<vtkIdList> cellsIdsToCheck = vtkSmartPointer<vtkIdList>::New();
+	vtkSmartPointer<vtkIdList> pts = vtkSmartPointer<vtkIdList>::New();
+	_mesh->GetCellPoints(currentIdCell, pts);
+	_mesh->GetCellNeighbors(currentIdCell, pts, cellsIdsToClear);
+
+	// Course all neighbors ids cells to clear from current id cell
+	for (int counterIdsCells = 0; counterIdsCells < cellsIdsToCheck->GetNumberOfIds(); counterIdsCells++) {
+		// not contains in list ids polygons to suppr
+		if (idsPolygonsToSuppr->IsId(cellsIdsToCheck->GetId(counterIdsCells)) == -1) {
+			vtkSmartPointer<vtkIdList> ptsFromCellIdToCheck = vtkSmartPointer<vtkIdList>::New();
+			_mesh->GetCellPoints(cellsIdsToClear->GetId(counterIdsCells), ptsFromCellIdToCheck);
+			// Course all ids points from current neighbor id cell to check
+			for (int counterIdsPointsFromCurrentNeighborIdCell = 0; counterIdsPointsFromCurrentNeighborIdCell < ptsFromCellIdToCheck->GetNumberOfIds;
+			counterIdsPointsFromCurrentNeighborIdCell++) {
+				// We want suppr polygon
+				if (mapPolygonByDualVertex->find(ptsFromCellIdToCheck->GetId(counterIdsPointsFromCurrentNeighborIdCell))->second.size() < 3) {
+					clearNeighborsPolygonsOpenMarkedToSuppr(_mesh, it_mapPolygonByDualVertex, cellsIdsToCheck->GetId(counterIdsCells), idsPolygonsToSuppr);
+				}
+			}
+		}
+	}
+}
+
 void WriteMeshToPolyVTK(vtkSmartPointer<vtkPolyData> polyData,
 			std::string filename)
 {
@@ -491,8 +567,9 @@ int main ( int argc, char *argv[] )
 	//setpoints
 
   //--------------------------------------
+
 	// Course all point dual in map
-	for (std::map<vtkIdType, std::vector<vtkIdType>>::iterator it_mapPolygonByPrimalVertex
+	/*for (std::map<vtkIdType, std::vector<vtkIdType>>::iterator it_mapPolygonByPrimalVertex
 		= mapPolygonByPrimalVertex.begin(); it_mapPolygonByPrimalVertex != mapPolygonByPrimalVertex.end();
 		it_mapPolygonByPrimalVertex++)
 	{
@@ -515,7 +592,7 @@ int main ( int argc, char *argv[] )
 
 				//intermediaryMesh->InsertNextCell
 			}
-	}
+	}*/
 	intermediaryMesh->SetPoints(dualMeshPoints);
 
 	//--------------------------------------
